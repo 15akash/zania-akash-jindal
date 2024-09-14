@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import styles from "./CardImage.module.scss";
 import LoadingSpinner from "../../atoms/loading-spinner";
 import { ICardImageProps } from "../../../models/model";
@@ -17,4 +17,4 @@ const CardImage = ({ image, alt }: ICardImageProps) => {
     );
 };
 
-export default CardImage;
+export default React.memo(CardImage);

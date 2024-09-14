@@ -7,6 +7,7 @@ I made this application only for the purpose of desktop/laptop considering there
 `How the application is developed and works?`
 The app is made from scratch, there is no external library used in this. I am only using typescript and scss. There is draggable feature in the html using which I am handling all the logic right from the drag start till the drag is completed.
 onDragStart helps me to identify which card is being dragged and onDragOVer helps me to identify which over which card the draggedCard is being hovered on. With the help of this logic I am moving the cards from one place to other. For animation to work correctly, I am using preventDefault method from onDragOver.
+The Loading spinner will be shown till the time image on each card is not completely loaded.
 
 # Getting Started with Create React App
 
