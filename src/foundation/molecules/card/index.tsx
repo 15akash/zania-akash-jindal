@@ -19,13 +19,14 @@ const Card = ({ type, title, position, index }: ICardProps) => {
     return (
         <div
             draggable="true"
-            onDragStart={(e) => {
-                dispatch({ type: "SET_DRAGGING_CARD", payload: index });
-            }}
-            onDragEnd={dragEndHandler}
-            onDragOver={(e) =>
-                dispatch({ type: "SET_DRAGGING_OVER", payload: index })
+            onDragStart={() =>
+                dispatch({ type: "SET_DRAGGING_CARD", payload: index })
             }
+            onDragEnd={dragEndHandler}
+            onDragOver={(e) => {
+                e.preventDefault();
+                dispatch({ type: "SET_DRAGGING_OVER", payload: index });
+            }}
             className={cardClass}
         >
             <p>{title}</p>
