@@ -1,3 +1,9 @@
+declare global {
+    interface Document {
+        startViewTransition(callback: () => void): void;
+    }
+}
+
 export type ICardData = {
     type: string;
     title: string;

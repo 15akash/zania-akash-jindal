@@ -5,6 +5,7 @@ import styles from "./CardContainer.module.scss";
 import { ICardData } from "../../../models/data.model";
 import DragContext from "../../../store/DragContext";
 import { swapElements } from "../../../utils/common-utils";
+import { flushSync } from "react-dom";
 
 const CardContainer = () => {
     const [cards, setCards] = useState<ICardData[]>([]);
@@ -25,17 +26,19 @@ const CardContainer = () => {
                 dragOverCard as number,
                 draggingCard as number
             );
-            setCards(cardsAfterSwapping);
             dispatch({ type: "CANCEL_OPERATIONS" });
+            document.startViewTransition(() => {
+                flushSync(() => {
+                    setCards([...cardsAfterSwapping]);
+                });
+            });
         }
     }, [cards, isDragComplete, dragOverCard, draggingCard, dispatch]);
 
     return (
         <div className={styles["card-container"]}>
             {cards.map((card: ICardData, index: number) => (
-                <div key={card.type} style={{ position: "relative" }}>
-                    <Card {...card} index={index} />
-                </div>
+                <Card {...card} index={index} key={card.type} />
             ))}
         </div>
     );

@@ -28,6 +28,7 @@ const Card = ({ type, title, position, index }: ICardProps) => {
                 dispatch({ type: "SET_DRAGGING_OVER", payload: index });
             }}
             className={cardClass}
+            style={{ viewTransitionName: `card-${index}` }}
         >
             <p>{title}</p>
         </div>
