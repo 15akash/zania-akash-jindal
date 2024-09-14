@@ -1,9 +1,13 @@
 import "./App.scss";
+import CardContainer from "./foundation/organisms/card-container";
+import DragProvider from "./store/DragProvider";
 
 function App() {
     return (
         <div className="App">
-            <h1>hello</h1>
+            <DragProvider>
+                <CardContainer />
+            </DragProvider>
         </div>
     );
 }

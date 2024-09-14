@@ -1,0 +1,38 @@
+.card {
+    cursor: grab;
+    box-shadow: 2px 20px 30px rgba(0, 0, 0, 0.08);
+    background-color: white;
+    border-radius: 8px;
+    min-width: 200px;
+    min-height: 200px;
+    border: 1px solid rgb(222, 222, 222);
+    padding: 20px;
+
+    p {
+        margin: 0;
+    }
+
+    &-leaving {
+        background-color: rgb(227, 227, 227) !important;
+        animation: pulse 2s infinite;
+    }
+
+    &-hover-over {
+        background-color: rgb(203, 203, 203) !important;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scale(1.01);
+            opacity: 0.5;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}
