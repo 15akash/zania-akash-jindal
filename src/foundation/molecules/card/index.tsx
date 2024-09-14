@@ -19,6 +19,8 @@ const Card = (props: ICardProps) => {
         dispatch,
     } = useContext(DragContext);
 
+    const [isModalOpen, setIsModalOpen] = useState<string | null>(null);
+
     const cardClass = useCardClass(index);
     const catImage = useCatImage(position);
 
@@ -27,8 +29,6 @@ const Card = (props: ICardProps) => {
             dispatch({ type: "SET_DRAG_COMPLETE", payload: true });
         else dispatch({ type: "CANCEL_OPERATIONS" });
     }, [dragOverCard, draggingCard, dispatch]);
-
-    const [isModalOpen, setIsModalOpen] = useState<string | null>(null);
 
     return (
         <>
