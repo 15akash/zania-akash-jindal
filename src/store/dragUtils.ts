@@ -1,4 +1,4 @@
-import { IDispatchAction, IInitialState } from "../models/data.model";
+import { IDispatchAction, IInitialState } from "../models/model";
 
 export const dragReducer = (state: IInitialState, action: IDispatchAction) => {
     switch (action.type) {

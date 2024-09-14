@@ -1,5 +1,5 @@
 import React from "react";
-import { IContext, IDispatchAction, IInitialState } from "../models/data.model";
+import { IContext, IDispatchAction, IInitialState } from "../models/model";
 
 export const defaultState: IInitialState = {
     draggingCard: null,

@@ -1,6 +1,6 @@
 import { useContext, useCallback } from "react";
 import DragContext from "../../../store/DragContext";
-import { ICardProps } from "../../../models/data.model";
+import { ICardProps } from "../../../models/model";
 import { useCardClass, useCatImage } from "../../../utils/hook";
 
 const Card = ({ type, title, position, index }: ICardProps) => {

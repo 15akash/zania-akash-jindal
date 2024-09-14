@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import data from "../../../utils/data.json";
 import Card from "../../molecules/card";
 import styles from "./CardContainer.module.scss";
-import { ICardData } from "../../../models/data.model";
+import { ICardData } from "../../../models/model";
 import DragContext from "../../../store/DragContext";
 import { swapElements } from "../../../utils/common-utils";
 import { flushSync } from "react-dom";

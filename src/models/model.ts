@@ -8,18 +8,17 @@ export type ICardData = {
     type: string;
     title: string;
     position: number;
-}
+};
 
 export interface ICardProps extends ICardData {
     index: number;
-};
+}
 
 type IActionType =
     | "SET_DRAGGING_CARD"
     | "SET_DRAGGING_OVER"
     | "SET_DRAG_COMPLETE"
     | "CANCEL_OPERATIONS";
-
 
 export type IInitialState = {
     draggingCard: number | null;
@@ -32,7 +31,6 @@ export type IDispatchAction = {
     payload?: any;
 };
 
-
 export type IContext = {
     state: IInitialState;
     dispatch: React.Dispatch<IDispatchAction>;
@@ -40,5 +38,4 @@ export type IContext = {
 
 export type DragProviderProps = {
     children: React.ReactNode;
-}
-
+};

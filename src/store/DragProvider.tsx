@@ -4,7 +4,7 @@ import {
     IDispatchAction,
     DragProviderProps,
     IInitialState,
-} from "../models/data.model";
+} from "../models/model";
 import { dragReducer } from "./dragUtils";
 
 const DragProvider = (props: DragProviderProps) => {
