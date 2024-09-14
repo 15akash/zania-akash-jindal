@@ -1,7 +1,14 @@
-import { useContext, useCallback, useState, lazy, Suspense } from "react";
+import React, {
+    useContext,
+    useCallback,
+    useState,
+    lazy,
+    Suspense,
+} from "react";
 import DragContext from "../../../store/DragContext";
 import { ICardProps } from "../../../models/model";
 import { useCardClass, useCatImage } from "../../../utils/hook";
+import CardImage from "../card-image";
 
 const Modal = lazy(() => import("../../organisms/modal"));
 
@@ -40,7 +47,7 @@ const Card = (props: ICardProps) => {
                 onClick={() => setIsModalOpen(type)}
             >
                 <p>{title}</p>
-                <img src={catImage} alt="cat" />
+                <CardImage image={catImage} alt={type} />
             </div>
             {isModalOpen && (
                 <Suspense>
@@ -55,4 +62,4 @@ const Card = (props: ICardProps) => {
     );
 };
 
-export default Card;
+export default React.memo(Card);

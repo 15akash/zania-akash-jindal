@@ -14,6 +14,11 @@ export interface ICardProps extends ICardData {
     index: number;
 }
 
+export type ICardImageProps = {
+    image: string;
+    alt: string;
+};
+
 type IActionType =
     | "SET_DRAGGING_CARD"
     | "SET_DRAGGING_OVER"

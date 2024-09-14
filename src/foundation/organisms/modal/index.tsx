@@ -2,6 +2,7 @@ import { FC, useEffect } from "react";
 import { ModalProps } from "../../../models/model";
 import styles from "./Modal.module.scss";
 import { useCatImage } from "../../../utils/hook";
+import CardImage from "../../molecules/card-image";
 
 const Modal: FC<ModalProps> = (props: ModalProps) => {
     const catImage = useCatImage(props.position);
@@ -29,7 +30,7 @@ const Modal: FC<ModalProps> = (props: ModalProps) => {
                     <button onClick={props.isClose}>X</button>
                 </div>
                 <div className={styles["modal--container--body"]}>
-                    <img src={catImage} alt="cat" />
+                    <CardImage image={catImage} alt={props.type} />
                 </div>
             </div>
         </div>
