@@ -4,9 +4,17 @@
     background-color: white;
     border-radius: 8px;
     min-width: 200px;
-    min-height: 200px;
     border: 1px solid rgb(222, 222, 222);
     padding: 20px;
+    height: 300px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        max-height: 260px;
+    }
 
     p {
         margin: 0;

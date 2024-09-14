@@ -1,7 +1,7 @@
 import { useContext, useCallback } from "react";
 import DragContext from "../../../store/DragContext";
 import { ICardProps } from "../../../models/data.model";
-import { useCardClass } from "../../../utils/hook";
+import { useCardClass, useCatImage } from "../../../utils/hook";
 
 const Card = ({ type, title, position, index }: ICardProps) => {
     const {
@@ -10,12 +10,14 @@ const Card = ({ type, title, position, index }: ICardProps) => {
     } = useContext(DragContext);
 
     const cardClass = useCardClass(index);
+    const catImage = useCatImage(position);
 
     const dragEndHandler = useCallback(() => {
         if (dragOverCard !== draggingCard) {
             dispatch({ type: "SET_DRAG_COMPLETE", payload: true });
         }
     }, [dragOverCard, draggingCard, dispatch]);
+
     return (
         <div
             draggable="true"
@@ -31,6 +33,7 @@ const Card = ({ type, title, position, index }: ICardProps) => {
             style={{ viewTransitionName: `card-${index}` }}
         >
             <p>{title}</p>
+            <img src={catImage} alt="cat" />
         </div>
     );
 };
