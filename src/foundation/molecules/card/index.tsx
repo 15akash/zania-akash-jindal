@@ -16,9 +16,9 @@ const Card = (props: ICardProps) => {
     const catImage = useCatImage(position);
 
     const dragEndHandler = useCallback(() => {
-        if (dragOverCard !== draggingCard) {
+        if (dragOverCard !== draggingCard)
             dispatch({ type: "SET_DRAG_COMPLETE", payload: true });
-        }
+        else dispatch({ type: "CANCEL_OPERATIONS" });
     }, [dragOverCard, draggingCard, dispatch]);
 
     const [isModalOpen, setIsModalOpen] = useState<string | null>(null);
