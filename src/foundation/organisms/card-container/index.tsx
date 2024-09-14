@@ -10,7 +10,7 @@ const CardContainer = () => {
     const [cards, setCards] = useState<ICardData[]>([]);
 
     const {
-        state: { draggingCard, dragOverCard, dragCompleteCard },
+        state: { draggingCard, dragOverCard, isDragComplete },
         dispatch,
     } = useContext(DragContext);
 
@@ -19,7 +19,7 @@ const CardContainer = () => {
     }, []);
 
     useEffect(() => {
-        if (dragCompleteCard) {
+        if (isDragComplete) {
             const cardsAfterSwapping = swapElements(
                 cards,
                 dragOverCard as number,
@@ -28,7 +28,7 @@ const CardContainer = () => {
             setCards(cardsAfterSwapping);
             dispatch({ type: "CANCEL_OPERATIONS" });
         }
-    }, [cards, dragCompleteCard, dragOverCard, draggingCard, dispatch]);
+    }, [cards, isDragComplete, dragOverCard, draggingCard, dispatch]);
 
     return (
         <div className={styles["card-container"]}>

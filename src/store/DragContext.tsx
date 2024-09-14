@@ -4,7 +4,7 @@ import { IContext, IDispatchAction, IInitialState } from "../models/data.model";
 export const defaultState: IInitialState = {
     draggingCard: null,
     dragOverCard: null,
-    dragCompleteCard: false,
+    isDragComplete: false,
 };
 
 const context: IContext = {

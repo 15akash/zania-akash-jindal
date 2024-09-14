@@ -18,7 +18,7 @@ type IActionType =
 export type IInitialState = {
     draggingCard: number | null;
     dragOverCard: number | null;
-    dragCompleteCard: boolean;
+    isDragComplete: boolean;
 };
 
 export type IDispatchAction = {

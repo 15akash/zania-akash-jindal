@@ -7,10 +7,10 @@ export const dragReducer = (state: IInitialState, action: IDispatchAction) => {
         case "SET_DRAGGING_OVER":
             return { ...state, dragOverCard: action.payload };
         case "SET_DRAG_COMPLETE":
-            return { ...state, dragCompleteCard: action.payload };
+            return { ...state, isDragComplete: action.payload };
         case "CANCEL_OPERATIONS":
             return {
-                dragCompleteCard: false,
+                isDragComplete: false,
                 draggingCard: null,
                 dragOverCard: null,
             };
