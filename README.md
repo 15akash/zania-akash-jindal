@@ -1,3 +1,13 @@
+## about the code and logic implementation
+
+I have developed this application based on the assumption that there are 3 columns and a certain set of data will be there. The data will be populated equally in these 3 columns starting from the left in row 1. With this logic, the scenario of having 5 cards and showing 3 cards in the first row and 2 cards in 2nd row fulfills our one of the conditions.
+
+I made this application only for the purpose of desktop/laptop considering there will be a mouse which would help in drag and drop. I didn't made this app similar to what we see in Jira board where the user can drag and drop across different columns otherwise that would violate our condition of having 3 cards in the first row and 2 cards in the 2nd row. Even if I try to create similar to Jira, in that case, it will make the entire row look fluctuate on the change or else I need help on the expectations.
+
+`How the application is developed and works?`
+The app is made from scratch, there is no external library used in this. I am only using typescript and scss. There is draggable feature in the html using which I am handling all the logic right from the drag start till the drag is completed.
+onDragStart helps me to identify which card is being dragged and onDragOVer helps me to identify which over which card the draggedCard is being hovered on. With the help of this logic I am moving the cards from one place to other. For animation to work correctly, I am using preventDefault method from onDragOver.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
