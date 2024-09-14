@@ -39,3 +39,8 @@ export type IContext = {
 export type DragProviderProps = {
     children: React.ReactNode;
 };
+
+export interface ModalProps extends ICardProps {
+    open: boolean;
+    isClose: () => void;
+}
